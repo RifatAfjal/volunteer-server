@@ -9,6 +9,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+const port = 5000
+
 var serviceAccount = require("./Configs/volunteer-network-ec7e3-firebase-adminsdk-3c03c-6ea691a683.json");
 
 admin.initializeApp({
@@ -105,4 +107,4 @@ client.connect(err => {
 });
 
 
-app.listen(process.env.POST || 5000);
+app.listen(process.env.PORT || port);
